@@ -1,0 +1,371 @@
+/* =========================================================
+   Pile Data Entry Form — Mobile First (390px / iPhone 15 Pro)
+   ========================================================= */
+
+:root {
+  --pile-bg: #f5f7fa;
+  --pile-primary: #1677ff;
+  --pile-card: #ffffff;
+  --pile-radius: 16px;
+  --pile-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --pile-input-height: 44px;
+  --pile-section-gap: 16px;
+  --pile-card-padding: 16px;
+  --pile-text-primary: #1f2329;
+  --pile-text-secondary: #8c9199;
+  --pile-border: #e6e8eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.pile-form-page {
+  max-width: 390px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--pile-bg);
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ===== Header ===== */
+.pile-form-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--pile-bg);
+}
+
+.pile-form-header__back,
+.pile-form-header__save {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--pile-text-primary);
+  background: var(--pile-card);
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.pile-form-header__back {
+  border-radius: 50%;
+}
+
+.pile-form-header__save {
+  border-radius: 10px;
+  color: var(--pile-primary);
+  box-shadow: var(--pile-shadow);
+}
+
+.pile-form-header__back:active,
+.pile-form-header__save:active {
+  transform: scale(0.94);
+}
+
+.pile-form-header__titles {
+  flex: 1;
+  text-align: center;
+  min-width: 0;
+}
+
+.pile-form-header__title.ant-typography {
+  margin: 0;
+  font-size: 17px;
+  line-height: 22px;
+  color: var(--pile-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pile-form-header__subtitle.ant-typography {
+  display: block;
+  font-size: 12px;
+  line-height: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===== Content ===== */
+.pile-form-content {
+  flex: 1;
+  padding: 0 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--pile-section-gap);
+}
+
+.pile-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pile-section-gap);
+}
+
+/* ===== Generic Card ===== */
+.pile-form-card.ant-card {
+  border-radius: var(--pile-radius);
+  box-shadow: var(--pile-shadow);
+  background: var(--pile-card);
+}
+
+.pile-form-card.ant-card .ant-card-body {
+  padding: var(--pile-card-padding);
+}
+
+/* ===== Info Card ===== */
+.pile-info-card__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pile-info-card__left {
+  display: flex;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.pile-info-card__avatar.ant-avatar {
+  flex-shrink: 0;
+  background: var(--pile-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.pile-info-card__main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.pile-info-card__label {
+  font-size: 12px;
+  color: var(--pile-text-secondary);
+}
+
+.pile-info-card__code-row {
+  margin-top: 2px;
+}
+
+.pile-info-card__code {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--pile-primary);
+  line-height: 24px;
+}
+
+.pile-info-card__badge.ant-tag {
+  border-radius: 20px;
+  margin-inline-end: 0;
+  font-size: 11px;
+  line-height: 18px;
+  padding: 0 8px;
+  border: none;
+}
+
+.pile-info-card__project {
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+.pile-info-card__right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+  min-width: 132px;
+}
+
+.pile-info-card__meta-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.pile-info-card__meta-icon {
+  margin-top: 3px;
+  color: var(--pile-primary);
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.pile-info-card__meta-label {
+  display: block;
+  font-size: 11px;
+  line-height: 15px;
+}
+
+.pile-info-card__meta-value {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--pile-text-primary);
+  line-height: 17px;
+  white-space: nowrap;
+}
+
+/* ===== Section title ===== */
+.pile-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.pile-section-title__bar {
+  width: 4px;
+  height: 16px;
+  border-radius: 2px;
+  background: var(--pile-primary);
+  flex-shrink: 0;
+}
+
+.pile-section-title__text.ant-typography {
+  margin: 0;
+  font-size: 15px;
+  color: var(--pile-text-primary);
+}
+
+/* ===== Form fields ===== */
+.pile-form .ant-form-item {
+  margin-bottom: 16px;
+}
+
+.pile-form .ant-form-item:last-child {
+  margin-bottom: 0;
+}
+
+.pile-form .ant-row .ant-form-item {
+  margin-bottom: 16px;
+}
+
+.pile-form .ant-form-item-label > label {
+  font-size: 13px;
+  color: var(--pile-text-primary);
+  height: auto;
+}
+
+.pile-full-width {
+  width: 100%;
+}
+
+.pile-input-icon {
+  color: var(--pile-primary);
+}
+
+/* Inputs, InputNumber, DatePicker share consistent sizing */
+.pile-form .ant-input,
+.pile-form .ant-input-affix-wrapper,
+.pile-form .ant-picker,
+.pile-form .ant-input-number,
+.pile-form .ant-input-number-affix-wrapper {
+  min-height: var(--pile-input-height);
+  border-radius: 10px;
+  border-color: var(--pile-border);
+  background: #fafbfc;
+}
+
+.pile-form .ant-input-number,
+.pile-form .ant-input-number-affix-wrapper {
+  width: 100%;
+}
+
+.pile-form .ant-input-number-input {
+  height: calc(var(--pile-input-height) - 2px);
+}
+
+.pile-form .ant-input-number-group-addon {
+  border-radius: 0 10px 10px 0;
+  background: #f0f2f5;
+  color: var(--pile-text-secondary);
+  font-size: 13px;
+}
+
+.pile-form .ant-picker .ant-picker-input > input {
+  font-size: 14px;
+}
+
+/* Focus effect */
+.pile-form .ant-input:focus,
+.pile-form .ant-input-affix-wrapper-focused,
+.pile-form .ant-picker-focused,
+.pile-form .ant-input-number-focused {
+  border-color: var(--pile-primary);
+  box-shadow: 0 0 0 3px rgba(22, 119, 255, 0.12);
+}
+
+.pile-form .ant-form-item-explain-error {
+  font-size: 12px;
+}
+
+/* ===== Footer note ===== */
+.pile-footer-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: #e8f2ff;
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.pile-footer-note__icon {
+  color: var(--pile-primary);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.pile-footer-note__text.ant-typography {
+  font-size: 13px;
+  color: #3a6fb0;
+  line-height: 18px;
+}
+
+/* ===== Sticky bottom action ===== */
+.pile-bottom-action {
+  position: sticky;
+  bottom: 0;
+  padding: 12px 0 4px;
+  background: linear-gradient(
+    to top,
+    var(--pile-bg) 70%,
+    rgba(245, 247, 250, 0)
+  );
+}
+
+.pile-submit-btn.ant-btn {
+  height: 52px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  background: var(--pile-primary);
+  box-shadow: 0 4px 12px rgba(22, 119, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.pile-submit-btn.ant-btn:active {
+  transform: scale(0.98);
+}
+
+/* ===== Smooth scrolling ===== */
+html,
+.pile-form-page {
+  scroll-behavior: smooth;
+}
