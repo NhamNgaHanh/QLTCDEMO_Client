@@ -3,13 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://username.github.io/construction-manage",
+  "homepage": "https://username.github.io/construction",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "all": "^0.0.0",
     "antd-style": "^4.1.0",
     "axios": "^1.18.1",
     "dayjs": "^1.11.21",
